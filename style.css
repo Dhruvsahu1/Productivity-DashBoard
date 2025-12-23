@@ -1,0 +1,112 @@
+:root{
+    --pri:#FCDEC0;
+    --sec:#416073;
+    --tri1:#B4846C;
+    --tri2:#E5B299;
+}
+@font-face {
+    font-family: Aeonik;
+    font-weight: 200;
+    src: url(./AeonikTRIAL-Light.otf);
+}
+@font-face{
+    font-family: Aeonik;
+    font-weight: 700;
+    src: url(./AeonikTRIAL-Bold.otf);
+}
+@font-face {
+    font-family: Aeonik;
+    font-weight: 500;
+    src: url(./AeonikTRIAL-Regular.otf);
+}
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Aeonik, sans-serif;
+  font-family: helvetica neue, sans-serif;
+}
+
+html,body{
+  height: 100%;
+  width: 100%;
+}
+#main{
+    height: 100%;
+    width: 100%;
+    background-color: var(--sec);
+    overflow-x: hidden;
+}
+section.allElems{
+    width: 100%;
+    min-height: 100%;
+    padding: 40px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 20px;
+    box-sizing: border-box; 
+    position: absolute;
+}
+
+.elems{
+    background-color: var(--tri2);
+    font-size: 30px;
+    height: 375px;
+    width: 280px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    box-shadow: 5px 5px 25px rgba(174, 127, 127, 0.552);
+}
+.elems img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.elems h2{
+    position: absolute;
+    color: var(--pri);
+    font-size: 20px;
+    bottom: 3%;
+    right: 3%;
+}
+.elems:active{
+    transform: scale(0.95);
+}
+.fullElem{
+    height: 100%;
+    width: 100%;
+    background-color: var(--sec);
+    padding: 20px;
+    display: none;
+    position: absolute;
+}
+.back{
+    position: absolute;
+    right: 5%;
+    background-color: var(--sec);
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 40px;
+    cursor: pointer;
+    border: none;
+}
+.back i {
+    color: var(--pri);
+}
+.back:active{
+    transform: scale(0.9);
+}
+.todo-list-fullPage {
+    display: block;
+}
+.todo-list-fullPage h2{
+    font-size: 40px;
+    color: var(--pri);
+}
+.todo-list-fullPage .todo-container{
+
+}
