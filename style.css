@@ -24,6 +24,8 @@
   padding: 0;
   font-family: Aeonik, sans-serif;
   font-family: helvetica neue, sans-serif;
+  box-sizing: border-box;
+  color: var(--pri);
 }
 
 html,body{
@@ -51,8 +53,8 @@ section.allElems{
 .elems{
     background-color: var(--tri2);
     font-size: 30px;
-    height: 375px;
-    width: 280px;
+    height: 55vh;
+    width: 18vw;
     border-radius: 10px;
     overflow: hidden;
     position: relative;
@@ -83,6 +85,7 @@ section.allElems{
     padding: 20px;
     display: none;
     position: absolute;
+    overflow: hidden;
 }
 .back{
     position: absolute;
@@ -101,12 +104,226 @@ section.allElems{
     transform: scale(0.9);
 }
 .todo-list-fullPage {
-    display: block;
+    display: none;
 }
 .todo-list-fullPage h2{
     font-size: 40px;
     color: var(--pri);
 }
 .todo-list-fullPage .todo-container{
+    height: 80vh;
+    width: 100%;
+    margin-top: 30px;
+   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.todo-list-fullPage .todo-container .addTask{
+    width: 33%;
+    height: 100%;
+    background-color: var(--tri1);
+    border-radius: 20px;
+    overflow: auto;
+}
+.todo-list-fullPage .todo-container .addTask::-webkit-scrollbar{
+    display: none;
+}
+.todo-list-fullPage .todo-container .allTask{
+    width: 65%;
+    height: 100%;
+    background-color: var(--tri1);
+    border-radius: 20px;
+}
+.todo-list-fullPage .todo-container .addTask form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+}
+.todo-list-fullPage .todo-container .addTask form #task-input{
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 25px;
+    background-color: var(--pri);
+    color: var(--sec);
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+}
+.todo-list-fullPage .todo-container .addTask form textarea{
+    width: 100%;
+    height: 45vh;
+    padding: 10px 20px;
+    font-size: 25px;
+    background-color: var(--pri);
+    color: var(--sec);
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+}
+.todo-list-fullPage .todo-container .addTask form button{
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 25px;
+    background-color: var(--sec);
+    border-radius: 5px;
+    font-weight: 500px;
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+    transition: all 0.3s linear;
+}
+.todo-list-fullPage .todo-container .addTask form button:active{
+    transform: scale(0.95);
+}
+.todo-list-fullPage .todo-container .allTask{
+    width: 65%;
+    height: 100%;
+    background-color: var(--tri1);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+    overflow: auto;
+}
+.todo-list-fullPage .todo-container .allTask::-webkit-scrollbar{
+    display: none;
+}
+.task{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: var(--pri);
+    padding: 10px 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+.task h5{
+    color: var(--sec);
+    font-size: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 4px;
+}
+.task h5 span{
+    background-color: red;
+    font-size: 10px;
+    color: var(--pri);
+    padding: 2px 5px;
+    border-radius: 50px;
+}
+.task h5 span.true{
+    opacity: 1;
+}
+.task h5 span.false{
+    opacity: 0;
+}
+.task button{
+    padding: 10px 10px;
+    color: var(--pri);
+    background-color: green;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 500;
+    margin-top: 2px;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+.task button:active{
+    transform: scale(0.95);
+}
+.mark-as-imp{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
 
+.mark-as-imp input[type="checkbox"]{
+    width: 22px;
+    height: 22px;
+    transform: scale(1);
+    transform-origin: center;
+    margin: 0;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.mark-as-imp label{
+    font-size: 20px;
+    line-height: 20px; 
+    display: flex;
+    align-items: center;
+    color: var(--pri);
+    cursor: pointer;
+}
+
+.task details{
+  width: 100%;
+}
+
+.task details summary{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+
+  list-style: none;
+  padding: 10px 0;
+}
+
+.task details summary::-webkit-details-marker{
+  display: none;
+}
+
+.task details summary h5{
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--sec);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.task details summary h5 span{
+  background-color: #ff4d4d;
+  color: white;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.task details summary .view{
+  font-size: 14px;
+  color: var(--sec);
+  opacity: 0.7;
+}
+
+.task details p{
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--sec);
+}
+
+
+.task details summary:hover .view{
+  opacity: 1;
+}
+
+.task details summary::after{
+  content: "▾";
+  margin-left: 10px;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.task details[open] summary::after{
+  transform: rotate(180deg);
 }
